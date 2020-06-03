@@ -1,15 +1,14 @@
 const book = {
   state: {
-    test: 1
+    fileName: '',
+    ifShowTitleAndMenu: false
   },
   mutations: {
-    SET_TEST: (state, newTest) => {
-      state.test = newTest
-    }
-  },
-  actions: {
-    setTest: ({ commit, state }, newTest) => {
-      return commit('SET_TEST', newTest)
+    SET_FILENAME: (state, fileName) => {
+      state.fileName = fileName
+    },
+    SET_IFSHOWTITLEANDMENU: (state, ifShow) => {
+      state.ifShowTitleAndMenu = ifShow
     }
   }
 }

@@ -5,29 +5,24 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-export default {
-  computed: {
-    ...mapGetters(['test'])
-  },
-  methods: {
-    fn() {
-      return {
-        a: 1,
-        b: 2
-      }
-    }
-  },
-  mounted() {
-    this.$store.dispatch('setTest', 48).then(() => {
-      /* console.log(this.$store.state.book.test) */
-      console.log(this.test)
-
-      console.log({ ...this.fn(), c: 4, d: 5 })
-    })
-  }
-}
+export default {}
+  document.addEventListener('DOMContentLoaded', () => {
+    // 获取html元素
+    const html = document.querySelector('html')
+    // 根据屏幕宽度动态计算fontSize
+    let fontSize = window.innerWidth / 10
+    // 当fontSize大于50时，设置最大值为50
+    fontSize = fontSize > 50 ? 50 : fontSize
+    // 设置html的fontSize属性，使rem生效，1rem = fontSize + 'px'
+    html.style.fontSize = fontSize + 'px'
+  })
 </script>
-<style>
 
+<style>
+#app {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    overflow: hidden;
+  }
 </style>
